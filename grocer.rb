@@ -34,6 +34,7 @@ end
 
 def checkout(cart, coupons)
   total = 0
+  cart = consolidate_cart(cart)
   cart = apply_coupons(cart, coupons)
   cart = apply_clearance(cart)
   cart.each {|k,v| total += v[:price]}
