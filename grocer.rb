@@ -42,6 +42,7 @@ def checkout(cart, coupons)
   total = 0
   cart.each {|k,v| total += v[:price]}
 
+  puts total
   total > 100 ? total = total*0.90 : total
 
 
