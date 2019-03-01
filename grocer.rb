@@ -30,6 +30,7 @@ end
 
 def apply_clearance(cart)
   cart.each { |k,v| v[:price] = (v[:price]*0.8).round(1) if v[:clearance]}
+  puts cart
   cart
 end
 
