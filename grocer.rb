@@ -6,7 +6,6 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  # code here
   if coupons.length == 0
     cart
   else
@@ -42,8 +41,6 @@ def checkout(cart, coupons)
   total = 0
   cart.each {|k,v| total += (v[:price]*v[:count])}
 
-  puts total
   total > 100 ? total = total*0.90 : total
-
 
 end
