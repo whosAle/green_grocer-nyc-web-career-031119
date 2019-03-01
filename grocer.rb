@@ -1,5 +1,6 @@
 def consolidate_cart(cart)
-  # code here
+  result = {}
+  cart.each {|item| item.each {|k,v| result.key?(k) ? result[k][:count] += 1 : result[k] = {v, count: 1} }}
 end
 
 def apply_coupons(cart, coupons)
