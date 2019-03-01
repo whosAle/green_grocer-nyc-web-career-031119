@@ -6,6 +6,19 @@ end
 
 def apply_coupons(cart, coupons)
   # code here
+  if coupons.length == 0
+    cart
+  else
+    coupons.each do |coupon|
+      if cart.keys.key?(coupon[:item])
+        if coupon[:num] <= cart[coupon[:item]][:count]
+          item = coupon[:item]
+          cart[item+" W/COUPON"] = {price: coupon[:item][:cost], clearance: cart[item][:clearance], count: 1}
+          cart[item][:count] -= coupon[:num]
+        end
+      end
+    end
+  end
 end
 
 def apply_clearance(cart)
