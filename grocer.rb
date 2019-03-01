@@ -1,6 +1,7 @@
 def consolidate_cart(cart)
   result = {}
   cart.each {|item| item.each {|k,v| result.key?(k) ? result[k][:count] += 1 : result.merge!(k => v.merge!(count: 1) ) }}
+  puts result
   result
 end
 
